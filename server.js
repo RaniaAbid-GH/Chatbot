@@ -21,9 +21,9 @@ app.use(
 app.use("/messenger", require("./Facebook/facebookBot"));
 
 app.get("/", (req, res) => {
-  return res.send("Chatbot Funcionando 🤖🤖🤖");
+  return res.send("Welcome 🤖");
 });
 
 app.listen(port, () => {
-  console.log(`Escuchando peticiones en el puerto ${port}`);
+  console.log(`Listening to requests on port ${port}`);
 });
