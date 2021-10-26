@@ -318,7 +318,7 @@ async function getUserData(senderId) {
     );
     return userData.data;
   } catch (err) {
-    console.log("Something went wrong in axios  getUserData: ", err);
+    console.log("Something went wrong in axios getUserData: ", err);
     return {
       first_name: "",
       last_name: "",
