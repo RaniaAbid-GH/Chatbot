@@ -121,7 +121,7 @@ async function receivedMessage(event) {
 
   if (messageText) {
     //send message to api.ai
-    console.log("se recibio este mensaje: ", messageText);
+    console.log("This message was received: ", messageText);
     await sendToDialogFlow(senderId, messageText);
   } else if (messageAttachments) {
     handleMessageAttachments(messageAttachments, senderId);
@@ -130,7 +130,7 @@ async function receivedMessage(event) {
 
 function handleMessageAttachments(messageAttachments, senderId) {
   //for now just reply
-  sendTextMessage(senderId, "Archivo adjunto recibido... gracias! .");
+  sendTextMessage(senderId, "Attachment received, thank you!");
 }
 
 async function handleQuickReply(senderId, quickReply, messageId) {
@@ -305,7 +305,7 @@ function handleDialogFlowResponse(sender, response) {
   }
 }
 async function getUserData(senderId) {
-  console.log("consiguiendo datos del usuario");
+  console.log("Getting user's data");
   let access_token = config.FB_PAGE_TOKEN;
   try {
     let userData = await axios.get(
@@ -318,7 +318,7 @@ async function getUserData(senderId) {
     );
     return userData.data;
   } catch (err) {
-    console.log("algo salio mal en axios getUserData: ", err);
+    console.log("Something went wrong in axios  getUserData: ", err);
     return {
       first_name: "",
       last_name: "",
